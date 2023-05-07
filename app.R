@@ -21,7 +21,7 @@ suppressWarnings(
 # Parâmetros -----
 Sys.setlocale(
   category = "LC_COLLATE",
-  locale = "Portuguese_Brazil.1252"
+  locale = "en-US"
 ) # Encoding do texto
 options(digits = 15) # Dígitos para números
 
