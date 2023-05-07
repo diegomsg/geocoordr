@@ -9,7 +9,6 @@ suppressWarnings(
     library(shinyWidgets) # habilita widgets
     library(thematic) # carrega tema bslib para plots
     library(tidyverse) # universo tidyverse, especialmente, dplyr, stringr, purrr
-    library(styler) # code format
     library(concaveman) # algoritmo de mínima área côncava
     library(sf) # geometria espacial
     library(tmap) # visualização em mapas
