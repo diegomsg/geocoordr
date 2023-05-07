@@ -47,3 +47,6 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 >>>>>>> 995138dc4fe4f5475a5350cab70f8352844adc80
+
+# rsconnect for shinyapps.io
+/rsconnect/
