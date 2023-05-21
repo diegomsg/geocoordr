@@ -12,7 +12,6 @@ suppressWarnings(
     library(concaveman) # algoritmo de mínima área côncava
     library(sf) # geometria espacial
     library(tmap) # visualização em mapas
-    library(mapview) # exportar mapa com basemap
     library(DT) # visualização de tabelas
     library(plotKML) # exportar KML customizado
   })
@@ -228,13 +227,11 @@ pg_converter_result <-
         full_screen = TRUE
       ),
       fluidRow(
-        column(width = 3, offset = 0,
+        column(width = 4, offset = 0,
                downloadButton("download_png", label = "PNG")),
-        column(width = 3, offset = 0,
-               downloadButton("download_png_basemap", label = "Visualização")),
-        column(width = 2, offset = 1,
+        column(width = 3, offset = 1,
                downloadButton("download_gpkg", label = "GKPG")),
-        column(width = 2, offset = 1,
+        column(width = 3, offset = 1,
                downloadButton("download_kml", label = "KML"))
       )
     )
@@ -367,7 +364,6 @@ ui <- page_navbar(
 )
 
 # Server -----
-#devmode(TRUE)
 server <- function(input, output, session) {
   
   ## Tema ----
@@ -510,7 +506,6 @@ server <- function(input, output, session) {
         tm_credits(text = "geocoordR")
       }
     })
-    map_lf <- tmap_leaflet(map())
     geo <- reactive({
       if (input$poligono) {
         entrada_poligono
@@ -545,16 +540,6 @@ server <- function(input, output, session) {
     })
     
     #### Arquivos ----
-    output$download_png_basemap <- downloadHandler(
-      filename = paste0("geocoordR-", 
-                        Sys.time() |> str_sub(end = 19) |> str_replace_all(":",""), 
-                        ".png"),
-      content = function(file) {
-        mapshot(x = map_lf,
-                vwidth = 1920, vheight = 1080,
-                file = file)
-      }
-    )
     output$download_png <- downloadHandler(
       filename = paste0("geocoordR-",
                         Sys.time() |> str_sub(end = 19) |> str_replace_all(":",""),
