@@ -17,12 +17,16 @@ Shiny web app using R to transform and visualize geographic coordinates.
 
 ## Installation
 
-No needed. Usage will be provided through shinyapps.
+No needed. Usage will be provided through [shinyapps.io](https://www.shinyapps.io/).
 You can fork it and customize at your disposal.
 
 ## Usage
 
-Main purpose is to visualize official description por land documentation in Brazil, unlimited usage according to your need.
+Main purpose is to visualize official description by land documentation in Brazil, unlimited usage according to your need.
+
+### Availability
+
+[geocoordR shinyapps.io](https://geocoordr.shinyapps.io/geocoordr/)
 
 ## Contributing
 
